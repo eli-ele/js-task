@@ -1,51 +1,86 @@
-// let num = -4;
-// if(num>0){
-//     console.log("es ricxvi dadebitia");
-// }else{
-//     console.log("es ricxvi uarkofitia");
-// }
-// function calculator(num1,num2,symbol){
-//     switch (symbol) {
-//         case "+":
-//             console.log(num1+num2);
-//             break;
-//         case"-":
-//             console.log(num1-num2);
-//             break;
-//         case"*":
-//             console.log(num1*num2);
-//             break;
-//         case"/":
-//             console.log(num1/num2);
-//             break;
-//         default:
-//             console.log("araa ricxvi")
-//             break;
-//     }
-// }
-// calculator(6,6,"+")
+//1) დავწეროთ ფუნქცია რომელსაც გადეცემა რაიმე პარამეტრი და არგუმენტად
+//მიიღებს ისეთ რიცხვებს რომლის დახმარებითაც უნდა გამოვითვალო
+//მაგალითად რამდენი წელი გვაკლდება თითოეულს პენსიამდე და ეს
+//ყველაფერი უნდა დავწეროთ ამ ფუნქციაში.
 
-// function calculator(num1, num2, simbol) {
-//    if (simbol==="+") {
-//     console.log(num1+num2);
-//    }else if(simbol==="-"){
-//     console.log(num1-num2);
-//    }else if(simbol==="*"){
-//     console.log(num1*num2);
-//    }else{
-//     console.log(num1/num2);
+// const age = 50;
+// if(age >= 60) {
+//     console.log('მას შეუძლია აიღოს პენსია');
+// } else{
+//     const years = 60 - age;
+//     console.log(`მას არ შეუძლია აიღოს პენსია ${years} წელი. `);
+// }
+
+
+//2)შექმენით კალკულატორის ფუნქცია სახელად კალკულატორი,
+// რომელიც ასრულებს ძირითად არითმეტიკულ ოპერაციებს.
+// ამ ფუნქციამ უნდა მიიღოს სამი პარამეტრი: ორი რიცხვი და სტრიქონი,მაგალითად num1,num2, "+".
+// რომელიც წარმოადგენს არითმეტიკულ ოპერატორს ('+', '-', '*', '/').
+// მოწოდებული ოპერატორის მიხედვით, ფუნქციამ უნდა შეასრულოს შესაბამისი ოპერაცია ორ ნომერზე და დააბრუნოს შედეგი.
+
+// const calculator = (num1, num2, simbol) => {
+//   if (simbol === "+") {
+//      console.log(num1 + num2); 
+//   } else if (simbol === "-") {
+//      console.log(num1 - num2);
+//   } else if ( simbol === "*") {
+//      console.log(num1 * num2 );
+//   } else if (simbol === "/") {
+//      console.log(num1 / num2);
+//   }
+// }
+//  calculator (6, 3, "+");
+
+
+//3)შეიმუშავეთ ფუნქცია სახელწოდებით checkPasswordStrength, რომელიც აფასებს მოცემული პაროლის სიძლიერეს.
+// პაროლის სიძლიერე განისაზღვრება რამდენიმე კრიტერიუმის საფუძველზე: ის უნდა იყოს მინიმუმ 8 სიმბოლო და მაქსიმუმ 16 სიმბოლო;
+// ფუნქციამ უნდა დააბრუნოს სტრიქონი სადაც გვეწერება რომ თუ ნაკლებია 8 მაშინ შესაბამისი ერორით თუ მეტია 16 მაშინ შესაბამისი ერრორით და თუ ცარიელია input უნდა შევამოწმოთ ეგეც
+//გამოიყენეთ if-else განცხადებები თითოეული კრიტერიუმის შესამოწმებლად და სიძლიერის შესაფასებლად.
+
+// function checkPasswordStrength(password) {
+//   if (password.length ==0) {
+//       return "პაროლი არ შეიცავს არცერთ სიმბოლის.";
+//   } else if (password.length < 8) {
+//       return "პაროლი უნდა შეიცავდეს მინიმუმ 8 სიმბოლოზე.";
+//   } else if (password.length > 16) {
+//       return "პაროლი უნდა შეიცავდეს მაქსიმუმ 16 სიმბოლოს.";
+//   } else {
+//       return "პაროლის სიძლიერე საკმარისია.";
+//   }
+// }
+//    let password = prompt("Enter your password");
+//    let result = checkPasswordStrength(password);
+//  console.log(result);
+
+
+//4) დაწერეთ ფუქნცია სადაც პარამეტრად გავატანთ flowers და არგუმენტად გავატანთ ყვავილების სახეობებს.
+//და გვჭირდება რომ switch case დავწეროთ ლოგიკა რომ თუ შესაბამისი სახელის ყვავილები გვაქვს მაშინ დავაბრუნოთ console-ში 
+//ეს ყვავილი ნაპოვნია!!
+
+// const flowers = flower => {
+//    switch (flower) {
+//     case `ვარდი`:
+//         console.log(`${flower}. ეს ყვავილი ნაპოვნია`);
+//       break;
+//     case `პამპა`:
+//         console.log(`${flower}. ეს ყვავილი ნაპოვნია`);
+//       break;
+//     case `ია`:
+//         console.log(`${flower}. ეს ყვავილი ნაპოვნია`);
+//       break;
+//     case `ჰორტენხია`:
+//         console.log(`${flower}. ეს ყვავილი ნაპოვნია`);
+//       break;
+//     default: 
+//         console.log(`მარაგი ამოწურულია`);
 //    }
 // }
-// calculator(3,4,"/");
+// flowers(`ვარდი`)
 
-let firstName;
 
-let lastName;
-let email;
-let password;
+//5)გვჭირდება სამი prompt.გვჭირდება რომ ამ სამ ინფუტში შემოყვანილი რიცხვებიდან რომელი არის უდიდესი ის დავიჭიროთ და დავლოგოთ უბრალოდ.
+// მაგალითად.2,5,7 და აქედან უდიდესი არის 7.
+//დაწერეთ ფუნქციაში ეს ყველაფერი და შემდეგ ამ ფუნქციაში შეამოწმეთ if else დახმარებით!!
 
-function firstName() {
-  if ((length = 0)) {
-    console.log("input is required");
-  } else console.log("daregistrirda warmatebit");
-}
+
+
